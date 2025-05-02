@@ -1,0 +1,74 @@
+一、规划与基础搭建：
+1、确定需求：见（需求分析.txt）
+2、选择技术栈：
+前端：React/Vue.js + TailwindCSS
+后端：Node.js + Express 或 Python + Flask
+数据库：SQLite（简单）或 MongoDB
+部署：Vercel（前端） + Railway/Heroku（后端）
+3、环境搭建
+安装Node.js和npm/yarn
+创建项目文件夹
+初始化前端项目（如npx create-react-app blog-frontend）
+
+
+二、前端基础开发
+1. 创建基本页面结构
+首页：文章列表
+文章详情页
+分类/标签页
+关于页面
+2. 设计UI组件
+导航栏
+文章卡片
+页脚
+侧边栏（可选）
+3. 设置路由
+
+
+三、后端开发
+1、设置后端项目
+
+2、创建基本API路由
+
+3、数据库模型设计
+
+四、前后端连接
+1、创建API服务
+
+2、前端数据获取
+
+3、表单处理
+
+五、增强功能
+1. 添加Markdown支持
+安装react-markdown或类似库
+实现文章内容的Markdown渲染
+2. 搜索功能
+简单的标题搜索
+或使用Algolia等第三方服务
+3. 用户认证（可选）
+JWT认证
+登录/注册表单
+
+六、测试与优化
+1. 测试所有功能
+手动测试各页面
+检查移动端适配
+2. 性能优化
+图片懒加载
+代码分割
+缓存策略
+3. SEO优化
+添加meta标签
+生成sitemap.xml
+
+七、部署
+1. 前端部署
+Vercel: vercel --prod
+Netlify: 拖拽build文件夹
+2. 后端部署
+Railway: 连接GitHub仓库
+Heroku: git push heroku main
+3. 域名配置（可选）
+购买域名
+配置DNS

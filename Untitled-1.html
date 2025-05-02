@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arroblog</title>
+</head>
+<body>
+    <h1>Unit Tests</h1>
+    <div id="test-results"></div>
+
+    <script>
+        function runTests() {
+            const testResults = document.getElementById('test-results');
+
+            // Test Case: Happy Path - Check if title is correct
+            {
+                const expectedTitle = 'Arroblog';
+                const actualTitle = document.title;
+                testResults.innerHTML += `<p>Test 1 - Expected: ${expectedTitle}, Actual: ${actualTitle} - ${expectedTitle === actualTitle ? 'Pass' : 'Fail'}</p>`;
+            }
+
+            // Test Case: Happy Path - Check if logo text is correct
+            {
+                const expectedLogoText = '我的博客';
+                const actualLogoText = document.querySelector('.logo').innerText;
+                testResults.innerHTML += `<p>Test 2 - Expected: ${expectedLogoText}, Actual: ${actualLogoText} - ${expectedLogoText === actualLogoText ? 'Pass' : 'Fail'}</p>`;
+            }
+
+            // Test Case: Happy Path - Check if the first article title is correct
+            {
+                const expectedFirstArticleTitle = '我的第一篇文章';
+                const actualFirstArticleTitle = document.querySelector('.article h2').innerText;
+                testResults.innerHTML += `<p>Test 3 - Expected: ${expectedFirstArticleTitle}, Actual: ${actualFirstArticleTitle} - ${expectedFirstArticleTitle === actualFirstArticleTitle ? 'Pass' : 'Fail'}</p>`;
+            }
+
+            // Test Case: Happy Path - Check if the second article title is correct
+            {
+                const expectedSecondArticleTitle = '关于这个博客';
+                const actualSecondArticleTitle = document.querySelectorAll('.article h2')[1].innerText;
+                testResults.innerHTML += `<p>Test 4 - Expected: ${expectedSecondArticleTitle}, Actual: ${actualSecondArticleTitle} - ${expectedSecondArticleTitle === actualSecondArticleTitle ? 'Pass' : 'Fail'}</p>`;
+            }
+
+            // Test Case: Edge Case - Check if link elements exist
+            {
+                const links = document.querySelectorAll('nav a');
+                const expectedLinksCount = 4;
+                const actualLinksCount = links.length;
+                testResults.innerHTML += `<p>Test 5 - Expected Links Count: ${expectedLinksCount}, Actual Links Count: ${actualLinksCount} - ${expectedLinksCount === actualLinksCount ? 'Pass' : 'Fail'}</p>`;
+            }
+
+            // Test Case: Edge Case - Check if link href attributes are empty
+            {
+                const links = document.querySelectorAll('nav a');
+                let allLinksHrefEmpty = true;
+                links.forEach(link => {
+                    if (link.getAttribute('href') !== '#') {
+                        allLinksHrefEmpty = false;
+                    }
+                });
+                testResults.innerHTML += `<p>Test 6 - All Links Href Empty: ${allLinksHrefEmpty} - ${allLinksHrefEmpty ? 'Pass' : 'Fail'}</p>`;
+            }
+
+            // Test Case: Edge Case - Check if container class is correctly applied to the div
+            {
+                const container = document.querySelector('.container');
+                const expectedContainerClass = 'container';
+                const actualContainerClass = container.getAttribute('class');
+                testResults.innerHTML += `<p>Test 7 - Expected Container Class: ${expectedContainerClass}, Actual Container Class: ${actualContainerClass} - ${expectedContainerClass === actualContainerClass ? 'Pass' : 'Fail'}</p>`;
+            }
+
+            // Test Case: Edge Case - Check if date elements exist in articles
+            {
+                const dates = document.querySelectorAll('.article .date');
+                const expectedDatesCount = 2;
+                const actualDatesCount = dates.length;
+                testResults.innerHTML += `<p>Test 8 - Expected Dates Count: ${expectedDatesCount}, Actual Dates Count: ${actualDatesCount} - ${expectedDatesCount === actualDatesCount ? 'Pass' : 'Fail'}</p>`;
+            }
+
+            // Test Case: Edge Case - Check if footer text is correct
+            {
+                const expectedFooterText = '© 2025 我的个人博客 | 由HTML和CSS构建';
+                const actualFooterText = document.querySelector('footer').innerText;
+                testResults.innerHTML += `<p>Test 9 - Expected: ${expectedFooterText}, Actual: ${actualFooterText} - ${expectedFooterText === actualFooterText ? 'Pass' : 'Fail'}</p>`;
+            }
+        }
+
+        runTests();
+    </script>
+</body>
+</html>
